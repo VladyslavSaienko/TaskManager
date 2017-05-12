@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "Users";
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/app")
+   
+
+    }
+<h2>Users</h2>
+
+<div>
+    <ul data-bind="foreach: users">
+        <li>
+            <p data-bind="text: Name"></p>
+
+        </li>
+    </ul>
+</div>
+<div>
+    <form  data-bind="submit: addUser">
+        <div class="form-group" data-bind="with: newUser">
+            <label for="inputTitle" >Name</label>
+            
+                <input type="text" class="form-control" id="inputName" data-bind="value:Name" />
+            
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>
